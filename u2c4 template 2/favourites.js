@@ -1,10 +1,11 @@
 // write js code here corresponding to favourites.html
 
 var favArr= JSON.parse(localStorage.getItem("favourites"))
+displayData(favArr)
+console.log(favArr)
 
-
-function displayData(data){
-    data.forEach(function(ele){
+function displayData(favArr){
+    favArr.forEach(function(ele){
         var tr = document.createElement("tr")
 
         var td1= document.createElement("td")
@@ -20,6 +21,9 @@ function displayData(data){
         td5.textContent= ele.venue
        var td6= document.createElement("button")
        td6.textContent= "Delete"
+       tr.append(td1,td2,td3,td4,td5,td6)
+         
+       document.querySelector("tbody").append(tr)
        td6.addEventListener("click",function(){
         deleteItem(ele,index) 
        })
@@ -31,8 +35,7 @@ window.location.reload()
         }
 
         
-        tr.append(td1,td2,td3,td4,td5,td6)
-        document.querySelector("tbody").append(tr)
+     
 
     })
     

@@ -38,5 +38,6 @@ function displayData(data){
         favFun.push(ele)
         console.log(ele)
         localStorage.setItem("favourites",JSON.stringify(matchArr))
+        window.location.href="favourites.html"
     }
 }
